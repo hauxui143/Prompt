@@ -10,7 +10,9 @@ A professional Next.js application that transforms your basic AI prompts into po
 ## ✨ Features
 
 - **🎯 Advanced Prompt Engineering**: Transform basic prompts into detailed, effective instructions
-- **🔒 Secure & Private**: Your API key and prompts are only used for the current session
+- **⏰ Session Management**: 24-hour API key sessions with timer and auto-expiry
+- **🔄 Flexible API Keys**: Change or extend API keys anytime during the session
+- **🔒 Secure & Private**: Client-side storage only, no server-side API key storage
 - **🎨 Beautiful UI**: Modern, responsive design with glassmorphism effects
 - **📱 Mobile-First**: Fully responsive design that works on all devices
 - **🚀 Fast & Efficient**: Built with Next.js 14 and optimized for performance
@@ -57,10 +59,12 @@ A professional Next.js application that transforms your basic AI prompts into po
 
 ## 🎯 How to Use
 
-1. **Enter your OpenAI API Key**: Input your API key in the secure field
-2. **Write your prompt**: Enter the basic prompt you want to enhance
-3. **Click "Enhance Prompt"**: Let AI transform your prompt with advanced techniques
-4. **Copy or Download**: Use the enhanced prompt in your AI interactions
+1. **Enter your OpenAI API Key**: Input your API key - it creates a 24-hour session
+2. **Session Management**: Your key is stored securely with timer display
+3. **Write your prompt**: Enter the basic prompt you want to enhance
+4. **Click "Enhance Prompt"**: Let AI transform your prompt with advanced techniques
+5. **Copy or Download**: Use the enhanced prompt in your AI interactions
+6. **Manage Sessions**: Change API key anytime or extend your session
 
 ### Example Usage
 
@@ -147,11 +151,13 @@ The application includes examples across various categories:
 
 ## 🔒 Security & Privacy
 
-- **No Data Storage**: API keys and prompts are never stored
-- **Session-Only**: All data is cleared when you close the browser
+- **Session Management**: API keys stored with 24-hour auto-expiry
+- **Client-Side Only**: Keys stored in browser localStorage, never on server
+- **No Server Storage**: No database or server-side API key storage
+- **Session Control**: Change or extend sessions anytime
 - **Direct API Calls**: Your requests go directly to OpenAI
 - **No Logging**: No user data is logged or tracked
-- **Client-Side Security**: Sensitive operations handled on client-side
+- **Auto-Cleanup**: Expired sessions automatically cleared
 
 ## 🚀 Deployment
 

@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Sparkles, Copy, Download, Wand2, Key, RefreshCw, ArrowRight } from 'lucide-react';
+import { Sparkles, Copy, Download, Wand2, RefreshCw, ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 import PromptExamples from './PromptExamples';
+import ApiKeyInput from './ApiKeyInput';
 
 export default function PromptEnhancer() {
   const [apiKey, setApiKey] = useState('');
@@ -84,6 +85,10 @@ export default function PromptEnhancer() {
     toast.success('Example prompt loaded!');
   };
 
+  const handleApiKeyChange = (newApiKey) => {
+    setApiKey(newApiKey);
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header Section */}
@@ -106,40 +111,7 @@ export default function PromptEnhancer() {
       <PromptExamples onSelectExample={handleSelectExample} />
 
       {/* API Key Section */}
-      <div className="mb-8">
-        <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 shadow-xl">
-          <div className="flex items-center mb-4">
-            <Key className="h-6 w-6 text-blue-600 mr-2" />
-            <h2 className="text-2xl font-semibold text-gray-800">OpenAI API Key</h2>
-          </div>
-          <p className="text-gray-600 mb-6">
-            Enter your OpenAI API key to start enhancing prompts. Your key is only used for this session and never stored.
-          </p>
-          <div className="relative">
-            <input
-              type="password"
-              value={apiKey}
-              onChange={(e) => setApiKey(e.target.value)}
-              placeholder="sk-..."
-              className="w-full px-6 py-4 text-lg border border-gray-300 rounded-full focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200 bg-white/80"
-            />
-            <div className="absolute inset-y-0 right-0 pr-6 flex items-center">
-              <Key className="h-5 w-5 text-gray-400" />
-            </div>
-          </div>
-          <p className="text-sm text-gray-500 mt-3">
-            🔒 Your API key is secure and only used for this session. Get your key from{' '}
-            <a
-              href="https://platform.openai.com/api-keys"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 underline rounded-full px-1 hover:bg-blue-50"
-            >
-              OpenAI Platform
-            </a>
-          </p>
-        </div>
-      </div>
+      <ApiKeyInput onApiKeyChange={handleApiKeyChange} />
 
       {/* Main Enhancement Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
