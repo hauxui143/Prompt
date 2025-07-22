@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Sparkles, Copy, Download, Wand2, Key, RefreshCw, ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
+import PromptExamples from './PromptExamples';
 
 export default function PromptEnhancer() {
   const [apiKey, setApiKey] = useState('');
@@ -77,6 +78,12 @@ export default function PromptEnhancer() {
     toast.success('All fields cleared!');
   };
 
+  const handleSelectExample = (prompt) => {
+    setOriginalPrompt(prompt);
+    setEnhancedPrompt('');
+    toast.success('Example prompt loaded!');
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header Section */}
@@ -94,6 +101,9 @@ export default function PromptEnhancer() {
           Our advanced prompt engineering techniques will make your AI interactions more effective.
         </p>
       </div>
+
+      {/* Examples Section */}
+      <PromptExamples onSelectExample={handleSelectExample} />
 
       {/* API Key Section */}
       <div className="mb-8">

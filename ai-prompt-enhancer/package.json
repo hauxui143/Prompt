@@ -1,12 +1,29 @@
 {
   "name": "ai-prompt-enhancer",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "A professional Next.js application that transforms your basic AI prompts into powerful, detailed instructions using advanced prompt engineering techniques.",
+  "keywords": ["ai", "prompt-engineering", "openai", "nextjs", "tailwindcss", "prompt-enhancer"],
+  "author": "AI Prompt Enhancer Team",
+  "license": "MIT",
+  "homepage": "https://github.com/your-username/ai-prompt-enhancer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ai-prompt-enhancer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/ai-prompt-enhancer/issues"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .next out",
+    "analyze": "ANALYZE=true npm run build",
+    "export": "next export"
   },
   "dependencies": {
     "lucide-react": "^0.525.0",
@@ -22,5 +39,9 @@
     "eslint": "^9",
     "eslint-config-next": "15.4.2",
     "tailwindcss": "^4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }
